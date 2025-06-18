@@ -100,103 +100,152 @@ const Index = () => {
         ></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-4 mb-6 animate-fade-in">
-              <Badge
-                variant="secondary"
-                className="px-3 py-1 text-sm font-medium"
-              >
-                <MapPin className="w-3 h-3 mr-1" />
-                Available for Remote Work
-              </Badge>
-              <Badge
-                variant="outline"
-                className="px-3 py-1 text-sm font-medium"
-              >
-                <Calendar className="w-3 h-3 mr-1" />
-                8+ Years Experience
-              </Badge>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in">
-              Pratik Vaishnav
-            </h1>
-
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-primary-600 font-semibold mb-6 animate-fade-in">
-              Lead Java Backend Developer & Cloud Architect
-            </h2>
-
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mb-8 leading-relaxed animate-fade-in">
-              Experienced Lead Software Engineer with 8+ years of expertise in
-              building scalable backend applications, integrating third-party
-              APIs, and managing cloud-based infrastructure. Currently leading
-              development efforts for GST-related real-time APIs at Bluevine
-              Technologies.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in">
-              <Button size="lg" asChild className="text-lg px-8 py-4">
-                <Link to="/contact" className="flex items-center gap-2">
-                  Let's Work Together
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="text-lg px-8 py-4"
-              >
-                <a
-                  href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content Section */}
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4 mb-6 animate-fade-in">
+                <Badge
+                  variant="secondary"
+                  className="px-3 py-1 text-sm font-medium"
                 >
-                  <Download className="w-5 h-5" />
-                  Download Resume
-                </a>
-              </Button>
+                  <MapPin className="w-3 h-3 mr-1" />
+                  Available for Remote Work
+                </Badge>
+                <Badge
+                  variant="outline"
+                  className="px-3 py-1 text-sm font-medium"
+                >
+                  <Calendar className="w-3 h-3 mr-1" />
+                  8+ Years Experience
+                </Badge>
+              </div>
 
-              <Button
-                variant="ghost"
-                size="lg"
-                asChild
-                className="text-lg px-8 py-4"
-              >
-                <Link to="/experience" className="flex items-center gap-2">
-                  View Experience
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in">
+                Pratik Vaishnav
+              </h1>
+
+              <h2 className="text-xl md:text-2xl lg:text-3xl text-primary-600 font-semibold mb-6 animate-fade-in">
+                Lead Java Backend Developer & Cloud Architect
+              </h2>
+
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mb-8 leading-relaxed animate-fade-in">
+                Experienced Lead Software Engineer with 8+ years of expertise in
+                building scalable backend applications, integrating third-party
+                APIs, and managing cloud-based infrastructure. Currently leading
+                development efforts for GST-related real-time APIs at Bluevine
+                Technologies.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in">
+                <Button size="lg" asChild className="text-lg px-8 py-4">
+                  <Link to="/contact" className="flex items-center gap-2">
+                    Let's Work Together
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  asChild
+                  className="text-lg px-8 py-4"
+                >
+                  <a
+                    href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Resume
+                  </a>
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  asChild
+                  className="text-lg px-8 py-4"
+                >
+                  <Link to="/experience" className="flex items-center gap-2">
+                    View Experience
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-600">
+                    8+
+                  </div>
+                  <div className="text-sm text-gray-600">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-600">
+                    3x
+                  </div>
+                  <div className="text-sm text-gray-600">Employee of Month</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-600">
+                    50+
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Projects Delivered
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-600">
+                    100%
+                  </div>
+                  <div className="text-sm text-gray-600">Remote Ready</div>
+                </div>
+              </div>
             </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-600">
-                  8+
+            {/* Photo Section */}
+            <div className="flex justify-center lg:justify-end animate-fade-in">
+              <div className="relative">
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent/20 rounded-3xl transform rotate-6 scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-primary-100 rounded-3xl transform -rotate-3 scale-105"></div>
+
+                {/* Profile photo */}
+                <div className="relative bg-white p-4 rounded-3xl shadow-2xl">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/d1758924c55c4985a5cd6699a070ab55/img_1469-832a33?format=webp&width=800"
+                    alt="Pratik Vaishnav - Lead Java Backend Developer"
+                    className="w-80 h-80 object-cover rounded-2xl"
+                  />
+
+                  {/* Floating badge */}
+                  <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg border-4 border-primary-50">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent rounded-full flex items-center justify-center">
+                      <Code className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-600">
-                  3x
+
+                {/* Floating elements */}
+                <div className="absolute -top-4 -left-4 bg-white rounded-lg p-3 shadow-lg animate-pulse">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm font-medium text-gray-700">
+                      Available
+                    </span>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600">Employee of Month</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-600">
-                  50+
+
+                <div className="absolute top-8 -right-8 bg-white rounded-lg p-3 shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <Server className="w-4 h-4 text-primary-600" />
+                    <span className="text-sm font-medium text-gray-700">
+                      Backend Expert
+                    </span>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary-600">
-                  100%
-                </div>
-                <div className="text-sm text-gray-600">Remote Ready</div>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X, Download, Mail } from "lucide-react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,8 +28,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="font-bold text-xl text-primary-900">
-            Pratik Vaishnav
+          <Link to="/" className="flex items-center">
+            <Logo size="md" showText={false} />
+            <span className="ml-3 font-bold text-xl text-primary-900 hidden sm:block">
+              Pratik Vaishnav
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
