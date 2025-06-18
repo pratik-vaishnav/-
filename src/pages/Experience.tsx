@@ -38,7 +38,7 @@ const Experience = () => {
       ],
     },
     {
-      title: "Frameworks & Libraries",
+      title: "Backend Frameworks",
       icon: GitBranch,
       color: "bg-green-500",
       skills: [
@@ -47,7 +47,20 @@ const Experience = () => {
         { name: "Hibernate", level: 85, years: "6+" },
         { name: "Apache Kafka", level: 90, years: "4+" },
         { name: "ActiveMQ", level: 80, years: "3+" },
-        { name: "Node.js", level: 60, years: "2+" },
+        { name: "Node.js", level: 65, years: "3+" },
+      ],
+    },
+    {
+      title: "Frontend Technologies",
+      icon: Code,
+      color: "bg-cyan-500",
+      skills: [
+        { name: "React", level: 85, years: "4+" },
+        { name: "Angular", level: 80, years: "3+" },
+        { name: "TypeScript", level: 82, years: "3+" },
+        { name: "JavaScript ES6+", level: 88, years: "5+" },
+        { name: "HTML5/CSS3", level: 85, years: "6+" },
+        { name: "Responsive Design", level: 80, years: "4+" },
       ],
     },
     {
@@ -118,6 +131,7 @@ const Experience = () => {
       keyAchievements: [
         "Designed and optimized REST APIs serving 1M+ requests daily across internal and external clients",
         "Architected cloud infrastructure using AWS stack (EC2, RDS, S3, EKS, IAM, Route53, MSK, Lambda)",
+        "Developed responsive React-based admin dashboards for real-time system monitoring and management",
         "Implemented comprehensive monitoring and alerting via Zenduty ensuring 99.9% system reliability",
         "Led performance optimization initiatives using Scouter, improving response times by 40%",
         "Mentored junior developers and conducted sprint planning with cross-functional teams",
@@ -125,6 +139,7 @@ const Experience = () => {
       technologies: [
         "Java",
         "Spring Boot",
+        "React",
         "AWS",
         "Kubernetes",
         "Kafka",
@@ -144,11 +159,20 @@ const Experience = () => {
         "Contributed to GST product vertical development with focus on real-time processing and system optimization.",
       keyAchievements: [
         "Developed scalable microservices architecture handling real-time order processing",
+        "Built React-based internal tools for system administration and monitoring",
         "Optimized database queries reducing processing time by 35%",
         "Implemented automated testing frameworks improving code quality",
         "Collaborated with QA and DevOps teams for seamless deployments",
       ],
-      technologies: ["Java", "Spring Boot", "Kafka", "MySQL", "AWS", "Docker"],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "React",
+        "Kafka",
+        "MySQL",
+        "AWS",
+        "Docker",
+      ],
       impact: "Enhanced system performance and reliability",
     },
     {
@@ -178,6 +202,7 @@ const Experience = () => {
         "Contributed to enterprise e-procurement modules including Auctions, Tenders, RFPs, and RFQs.",
       keyAchievements: [
         "Developed key features for Auction Tiger and Procure Tiger platforms",
+        "Built Angular-based user interfaces for auction and tender management systems",
         "Implemented complex auction algorithms and bidding mechanisms",
         "Collaborated with BA, QA, and UI teams for feature delivery",
         "Maintained legacy systems while building new capabilities",
@@ -185,6 +210,7 @@ const Experience = () => {
       technologies: [
         "Java",
         "Spring Framework",
+        "Angular",
         "ActiveMQ",
         "JSP",
         "Servlets",
@@ -406,6 +432,7 @@ const Experience = () => {
                     {[
                       "Java",
                       "Spring Boot",
+                      "React",
                       "AWS",
                       "Kubernetes",
                       "Kafka",
@@ -566,10 +593,11 @@ const Experience = () => {
                       Current Focus:
                     </h4>
                     <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Advanced React patterns and Next.js</li>
                       <li>• Advanced Kubernetes orchestration</li>
                       <li>• Serverless architecture patterns</li>
-                      <li>• AI/ML integration in backend systems</li>
-                      <li>• Cloud-native security practices</li>
+                      <li>• Modern frontend-backend integration</li>
+                      <li>• AI/ML integration in full-stack systems</li>
                     </ul>
                   </div>
                 </div>
