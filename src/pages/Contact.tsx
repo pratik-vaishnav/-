@@ -47,10 +47,10 @@ const Contact = () => {
       icon: Github,
       title: "GitHub",
       description: "Open source contributions and projects",
-      value: "Check out my code",
+      value: "pratik-vaishnav",
       action: "View Repositories",
-      href: "#",
-      available: false,
+      href: "https://github.com/pratik-vaishnav",
+      available: true,
     },
   ];
 
