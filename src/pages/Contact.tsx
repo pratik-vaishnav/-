@@ -1,0 +1,254 @@
+import Layout from "@/components/Layout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  ExternalLink,
+  Linkedin,
+  Github,
+  Download,
+  MessageSquare,
+} from "lucide-react";
+
+const Contact = () => {
+  const contactMethods = [
+    {
+      icon: Mail,
+      title: "Email",
+      description: "Best way to reach me for opportunities",
+      value: "Available on Resume",
+      action: "Download Resume",
+      href: "https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf",
+      primary: true,
+    },
+    {
+      icon: Linkedin,
+      title: "LinkedIn",
+      description: "Professional networking and updates",
+      value: "Connect with me",
+      action: "View Profile",
+      href: "#",
+      available: false,
+    },
+    {
+      icon: Github,
+      title: "GitHub",
+      description: "Open source contributions and projects",
+      value: "Check out my code",
+      action: "View Repositories",
+      href: "#",
+      available: false,
+    },
+    {
+      icon: Phone,
+      title: "Phone/WhatsApp",
+      description: "Available for urgent discussions",
+      value: "Available on Resume",
+      action: "Download Resume",
+      href: "https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf",
+    },
+  ];
+
+  const availability = {
+    status: "Available",
+    type: "Remote Work & Freelance",
+    location: "India (IST Timezone)",
+    response: "Within 24 hours",
+  };
+
+  return (
+    <Layout>
+      <div className="min-h-screen bg-gray-50 py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Let's Work Together
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Ready to discuss your next backend project? I'm available for
+              freelance work, remote opportunities, and consulting.
+            </p>
+          </div>
+
+          {/* Availability Status */}
+          <Card className="p-6 mb-8 border-l-4 border-l-green-500 bg-gradient-to-r from-green-50 to-white">
+            <CardContent className="p-0">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    Currently Available
+                  </h2>
+                  <p className="text-gray-600">
+                    Open for new opportunities and exciting projects
+                  </p>
+                </div>
+                <Badge className="bg-green-100 text-green-800 border-green-300">
+                  {availability.status}
+                </Badge>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-gray-500" />
+                  <span className="text-gray-600">
+                    Response time: {availability.response}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-gray-500" />
+                  <span className="text-gray-600">{availability.location}</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Contact Methods */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {contactMethods.map((method, index) => (
+              <Card
+                key={index}
+                className={`p-6 hover:shadow-lg transition-shadow duration-300 ${
+                  method.primary
+                    ? "ring-2 ring-primary-200 bg-primary-50/30"
+                    : ""
+                } ${method.available === false ? "opacity-60" : ""}`}
+              >
+                <CardContent className="p-0">
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                        method.primary ? "bg-primary-100" : "bg-gray-100"
+                      }`}
+                    >
+                      <method.icon
+                        className={`w-6 h-6 ${
+                          method.primary ? "text-primary-600" : "text-gray-600"
+                        }`}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                        {method.title}
+                        {method.primary && (
+                          <Badge variant="secondary" className="text-xs">
+                            Preferred
+                          </Badge>
+                        )}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-2">
+                        {method.description}
+                      </p>
+                      <p className="text-sm text-gray-800 font-medium mb-3">
+                        {method.value}
+                      </p>
+
+                      {method.available !== false ? (
+                        <Button
+                          size="sm"
+                          variant={method.primary ? "default" : "outline"}
+                          asChild
+                        >
+                          <a
+                            href={method.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                          >
+                            {method.action === "Download Resume" ? (
+                              <Download className="w-4 h-4" />
+                            ) : (
+                              <ExternalLink className="w-4 h-4" />
+                            )}
+                            {method.action}
+                          </a>
+                        </Button>
+                      ) : (
+                        <Badge variant="outline" className="text-xs">
+                          Coming Soon
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* What I'm Looking For */}
+          <Card className="p-8 mb-8">
+            <CardContent className="p-0">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+                What I'm Looking For
+              </h2>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <MessageSquare className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-medium text-gray-900 mb-2">
+                    Freelance Projects
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Backend development, API integrations, and cloud
+                    architecture projects
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <MapPin className="w-6 h-6 text-green-600" />
+                  </div>
+                  <h3 className="font-medium text-gray-900 mb-2">
+                    Remote Opportunities
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Full-time or contract positions with innovative companies
+                    worldwide
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <ExternalLink className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-medium text-gray-900 mb-2">Consulting</h3>
+                  <p className="text-sm text-gray-600">
+                    Architecture reviews, performance optimization, and
+                    technical guidance
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Button size="lg" asChild className="text-lg px-8 py-4">
+              <a
+                href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Download className="w-5 h-5" />
+                Download Resume for Contact Details
+              </a>
+            </Button>
+            <p className="text-sm text-gray-600 mt-4">
+              All contact information including email and phone number are
+              available in my resume
+            </p>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Contact;
