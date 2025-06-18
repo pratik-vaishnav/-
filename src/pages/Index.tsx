@@ -27,14 +27,9 @@ const Index = () => {
       color: "bg-tech-spring",
       years: "7+",
     },
+    { name: "React", level: "Advanced", color: "bg-cyan-500", years: "4+" },
+    { name: "Angular", level: "Advanced", color: "bg-red-500", years: "3+" },
     { name: "AWS", level: "Advanced", color: "bg-tech-aws", years: "5+" },
-    {
-      name: "Kubernetes",
-      level: "Advanced",
-      color: "bg-tech-kubernetes",
-      years: "4+",
-    },
-    { name: "Kafka", level: "Advanced", color: "bg-primary-600", years: "4+" },
     { name: "MySQL", level: "Expert", color: "bg-blue-600", years: "8+" },
   ];
 
@@ -64,28 +59,28 @@ const Index = () => {
 
   const highlights = [
     {
+      icon: Code,
+      title: "Full-Stack Development",
+      description:
+        "End-to-end application development with Java/Spring Boot backends and React/Angular frontends",
+    },
+    {
       icon: Server,
       title: "Backend Architecture",
       description:
-        "Designed and optimized REST APIs for critical backend systems used across internal and external clients",
+        "Designed and optimized REST APIs serving 1M+ daily requests with microservices architecture",
     },
     {
       icon: Cloud,
       title: "Cloud Infrastructure",
       description:
-        "Extensive experience with AWS cloud stack including EC2, RDS, S3, EKS, IAM, Route53, and Lambda",
+        "Extensive AWS experience with containerized deployments using Docker and Kubernetes",
     },
     {
       icon: Database,
-      title: "Real-time Processing",
+      title: "Modern UI/UX",
       description:
-        "Leading real-time order processing, downstream integrations, and vendor communication pipelines",
-    },
-    {
-      icon: GitBranch,
-      title: "System Integration",
-      description:
-        "Expert in integrating third-party systems including Payment Gateways and custom utility systems",
+        "Responsive web applications with React hooks, Angular components, and modern JavaScript",
     },
   ];
 
@@ -125,15 +120,15 @@ const Index = () => {
               </h1>
 
               <h2 className="text-xl md:text-2xl lg:text-3xl text-primary-600 font-semibold mb-6 animate-fade-in">
-                Lead Java Backend Developer & Cloud Architect
+                Lead Full-Stack Developer & Cloud Architect
               </h2>
 
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mb-8 leading-relaxed animate-fade-in">
-                Experienced Lead Software Engineer with 8+ years of expertise in
-                building scalable backend applications, integrating third-party
-                APIs, and managing cloud-based infrastructure. Currently leading
-                development efforts for GST-related real-time APIs at Bluevine
-                Technologies.
+                Experienced Lead Full-Stack Developer with 8+ years of expertise
+                in building end-to-end web applications. Specializing in
+                Java/Spring Boot backends, React/Angular frontends, and AWS
+                cloud infrastructure. Currently leading development efforts for
+                enterprise GST solutions at Bluevine Technologies.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in">
@@ -374,8 +369,8 @@ const Index = () => {
           </h2>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             I'm available for freelance projects, remote opportunities, and
-            consulting. Let's discuss how I can help bring your backend vision
-            to life.
+            consulting. Let's discuss how I can help bring your full-stack
+            vision to life with modern technologies and best practices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

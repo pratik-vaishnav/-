@@ -43,7 +43,7 @@ const Chatbot = () => {
     if (isOpen && messages.length === 0) {
       const welcomeMessage: Message = {
         id: "welcome",
-        text: "Hi! I'm Pratik's AI assistant. I can help you learn about his experience, skills, and background. What would you like to know?",
+        text: "Hi! I'm Pratik's AI assistant. I can help you learn about his full-stack development experience, technical skills, and background. What would you like to know?",
         sender: "bot",
         timestamp: new Date(),
         actions: [
@@ -94,7 +94,7 @@ const Chatbot = () => {
     ) {
       return {
         id: Date.now().toString(),
-        text: "Pratik has 8+ years of backend development experience! He's currently a Lead Software Engineer at Bluevine Technologies, where he leads the GST product vertical. Previously worked at e-Procurement Technologies and Xomic Infotech, focusing on enterprise systems.",
+        text: "Pratik has 8+ years of full-stack development experience! He's currently a Lead Software Engineer at Bluevine Technologies, where he leads the GST product vertical. He works with Java/Spring Boot backends, React/Angular frontends, and AWS cloud infrastructure.",
         sender: "bot",
         timestamp: new Date(),
         actions: [
@@ -117,7 +117,7 @@ const Chatbot = () => {
     ) {
       return {
         id: Date.now().toString(),
-        text: "Pratik specializes in Java, Spring Boot, AWS cloud services, Kubernetes, Kafka, and microservices architecture. He has extensive experience with MySQL, PostgreSQL, and enterprise system development.",
+        text: "Pratik is a full-stack developer specializing in Java/Spring Boot for backend, React/Angular for frontend, AWS cloud services, Kubernetes, Kafka, and modern web development. He has expertise in both MySQL/PostgreSQL databases and responsive UI design.",
         sender: "bot",
         timestamp: new Date(),
         actions: [
