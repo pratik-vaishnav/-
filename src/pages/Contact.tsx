@@ -20,9 +20,9 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       description: "Best way to reach me for opportunities",
-      value: "Available on Resume",
-      action: "Download Resume",
-      href: "https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf",
+      value: "pratikvaishnav2013@gmail.com",
+      action: "Send Email",
+      href: "mailto:pratikvaishnav2013@gmail.com",
       primary: true,
     },
     {
@@ -31,8 +31,17 @@ const Contact = () => {
       description: "Professional networking and updates",
       value: "Connect with me",
       action: "View Profile",
-      href: "#",
-      available: false,
+      href: "https://www.linkedin.com/in/pratik-vaishnav-244573a8",
+      available: true,
+    },
+    {
+      icon: Phone,
+      title: "Phone/WhatsApp",
+      description: "Available for urgent discussions",
+      value: "+91 9879957167",
+      action: "Call/Message",
+      href: "tel:+919879957167",
+      whatsapp: "https://wa.me/919879957167",
     },
     {
       icon: Github,
@@ -42,14 +51,6 @@ const Contact = () => {
       action: "View Repositories",
       href: "#",
       available: false,
-    },
-    {
-      icon: Phone,
-      title: "Phone/WhatsApp",
-      description: "Available for urgent discussions",
-      value: "Available on Resume",
-      action: "Download Resume",
-      href: "https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf",
     },
   ];
 
@@ -148,25 +149,42 @@ const Contact = () => {
                       </p>
 
                       {method.available !== false ? (
-                        <Button
-                          size="sm"
-                          variant={method.primary ? "default" : "outline"}
-                          asChild
-                        >
-                          <a
-                            href={method.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant={method.primary ? "default" : "outline"}
+                            asChild
                           >
-                            {method.action === "Download Resume" ? (
-                              <Download className="w-4 h-4" />
-                            ) : (
-                              <ExternalLink className="w-4 h-4" />
-                            )}
-                            {method.action}
-                          </a>
-                        </Button>
+                            <a
+                              href={method.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2"
+                            >
+                              {method.action === "Send Email" ? (
+                                <Mail className="w-4 h-4" />
+                              ) : method.action === "Call/Message" ? (
+                                <Phone className="w-4 h-4" />
+                              ) : (
+                                <ExternalLink className="w-4 h-4" />
+                              )}
+                              {method.action}
+                            </a>
+                          </Button>
+                          {method.whatsapp && (
+                            <Button size="sm" variant="outline" asChild>
+                              <a
+                                href={method.whatsapp}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2"
+                              >
+                                <MessageSquare className="w-4 h-4" />
+                                WhatsApp
+                              </a>
+                            </Button>
+                          )}
+                        </div>
                       ) : (
                         <Badge variant="outline" className="text-xs">
                           Coming Soon
@@ -229,20 +247,36 @@ const Contact = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <Button size="lg" asChild className="text-lg px-8 py-4">
-              <a
-                href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <Button size="lg" asChild className="text-lg px-8 py-4">
+                <a
+                  href="mailto:pratikvaishnav2013@gmail.com"
+                  className="flex items-center gap-2"
+                >
+                  <Mail className="w-5 h-5" />
+                  Send Email
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="text-lg px-8 py-4"
               >
-                <Download className="w-5 h-5" />
-                Download Resume for Contact Details
-              </a>
-            </Button>
-            <p className="text-sm text-gray-600 mt-4">
-              All contact information including email and phone number are
-              available in my resume
+                <a
+                  href="https://wa.me/919879957167"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  WhatsApp
+                </a>
+              </Button>
+            </div>
+            <p className="text-sm text-gray-600">
+              Ready to discuss your project? Reach out directly via email or
+              WhatsApp
             </p>
           </div>
         </div>
