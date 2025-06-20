@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production",
+    "build": "tsc && vite build --mode production",
+    "preview": "vite preview",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
