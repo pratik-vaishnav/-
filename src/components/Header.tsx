@@ -57,7 +57,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" size="sm" asChild>
               <a
-                href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
+                href="https://pratik-vaishnav.github.io/Pratik_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -110,7 +110,7 @@ const Header = () => {
               <div className="flex flex-col gap-3 pt-4">
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf"
+                    href="https://pratik-vaishnav.github.io/Pratik_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 justify-center"

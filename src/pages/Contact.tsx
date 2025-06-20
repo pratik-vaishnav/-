@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import PageTransition from "@/components/PageTransition";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -54,234 +55,241 @@ const Contact = () => {
     },
   ];
 
-  const availability = {
-    status: "Available",
-    type: "Remote Work & Freelance",
+  const contactInfo = {
     location: "India (IST Timezone)",
     response: "Within 24 hours",
+    purpose: "Professional Networking",
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Let's Work Together
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ready to discuss your next backend project? I'm available for
-              freelance work, remote opportunities, and consulting.
-            </p>
-          </div>
+    <PageTransition>
+      <Layout>
+        <div className="min-h-screen bg-gray-50 py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Professional Contact
+              </h1>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Feel free to reach out for professional networking, technical
+                discussions, or sharing insights about software development.
+              </p>
+            </div>
 
-          {/* Availability Status */}
-          <Card className="p-6 mb-8 border-l-4 border-l-green-500 bg-gradient-to-r from-green-50 to-white">
-            <CardContent className="p-0">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    Currently Available
-                  </h2>
-                  <p className="text-gray-600">
-                    Open for new opportunities and exciting projects
-                  </p>
+            {/* Availability Status */}
+            <Card className="p-6 mb-8 border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50 to-white">
+              <CardContent className="p-0">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      Professional Contact
+                    </h2>
+                    <p className="text-gray-600">
+                      Connect for technical discussions and professional
+                      networking
+                    </p>
+                  </div>
+                  <Badge className="bg-blue-100 text-blue-800 border-blue-300">
+                    {contactInfo.purpose}
+                  </Badge>
                 </div>
-                <Badge className="bg-green-100 text-green-800 border-green-300">
-                  {availability.status}
-                </Badge>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-gray-500" />
-                  <span className="text-gray-600">
-                    Response time: {availability.response}
-                  </span>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-gray-500" />
+                    <span className="text-gray-600">
+                      Response time: {contactInfo.response}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-gray-500" />
+                    <span className="text-gray-600">
+                      {contactInfo.location}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-gray-500" />
-                  <span className="text-gray-600">{availability.location}</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* Contact Methods */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {contactMethods.map((method, index) => (
-              <Card
-                key={index}
-                className={`p-6 hover:shadow-lg transition-shadow duration-300 ${
-                  method.primary
-                    ? "ring-2 ring-primary-200 bg-primary-50/30"
-                    : ""
-                } ${method.available === false ? "opacity-60" : ""}`}
-              >
-                <CardContent className="p-0">
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                        method.primary ? "bg-primary-100" : "bg-gray-100"
-                      }`}
-                    >
-                      <method.icon
-                        className={`w-6 h-6 ${
-                          method.primary ? "text-primary-600" : "text-gray-600"
+            {/* Contact Methods */}
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              {contactMethods.map((method, index) => (
+                <Card
+                  key={index}
+                  className={`p-6 hover:shadow-lg transition-shadow duration-300 ${
+                    method.primary
+                      ? "ring-2 ring-primary-200 bg-primary-50/30"
+                      : ""
+                  } ${method.available === false ? "opacity-60" : ""}`}
+                >
+                  <CardContent className="p-0">
+                    <div className="flex items-start gap-4">
+                      <div
+                        className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                          method.primary ? "bg-primary-100" : "bg-gray-100"
                         }`}
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-gray-900 mb-1 flex items-center gap-2">
-                        {method.title}
-                        {method.primary && (
-                          <Badge variant="secondary" className="text-xs">
-                            Preferred
-                          </Badge>
-                        )}
-                      </h3>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {method.description}
-                      </p>
-                      <p className="text-sm text-gray-800 font-medium mb-3">
-                        {method.value}
-                      </p>
+                      >
+                        <method.icon
+                          className={`w-6 h-6 ${
+                            method.primary
+                              ? "text-primary-600"
+                              : "text-gray-600"
+                          }`}
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                          {method.title}
+                          {method.primary && (
+                            <Badge variant="secondary" className="text-xs">
+                              Preferred
+                            </Badge>
+                          )}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-2">
+                          {method.description}
+                        </p>
+                        <p className="text-sm text-gray-800 font-medium mb-3">
+                          {method.value}
+                        </p>
 
-                      {method.available !== false ? (
-                        <div className="flex gap-2">
-                          <Button
-                            size="sm"
-                            variant={method.primary ? "default" : "outline"}
-                            asChild
-                          >
-                            <a
-                              href={method.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2"
+                        {method.available !== false ? (
+                          <div className="flex gap-2">
+                            <Button
+                              size="sm"
+                              variant={method.primary ? "default" : "outline"}
+                              asChild
                             >
-                              {method.action === "Send Email" ? (
-                                <Mail className="w-4 h-4" />
-                              ) : method.action === "Call/Message" ? (
-                                <Phone className="w-4 h-4" />
-                              ) : (
-                                <ExternalLink className="w-4 h-4" />
-                              )}
-                              {method.action}
-                            </a>
-                          </Button>
-                          {method.whatsapp && (
-                            <Button size="sm" variant="outline" asChild>
                               <a
-                                href={method.whatsapp}
+                                href={method.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2"
                               >
-                                <MessageSquare className="w-4 h-4" />
-                                WhatsApp
+                                {method.action === "Send Email" ? (
+                                  <Mail className="w-4 h-4" />
+                                ) : method.action === "Call/Message" ? (
+                                  <Phone className="w-4 h-4" />
+                                ) : (
+                                  <ExternalLink className="w-4 h-4" />
+                                )}
+                                {method.action}
                               </a>
                             </Button>
-                          )}
-                        </div>
-                      ) : (
-                        <Badge variant="outline" className="text-xs">
-                          Coming Soon
-                        </Badge>
-                      )}
+                            {method.whatsapp && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a
+                                  href={method.whatsapp}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-2"
+                                >
+                                  <MessageSquare className="w-4 h-4" />
+                                  WhatsApp
+                                </a>
+                              </Button>
+                            )}
+                          </div>
+                        ) : (
+                          <Badge variant="outline" className="text-xs">
+                            Coming Soon
+                          </Badge>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* What I'm Looking For */}
-          <Card className="p-8 mb-8">
-            <CardContent className="p-0">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-                What I'm Looking For
-              </h2>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <MessageSquare className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900 mb-2">
-                    Freelance Projects
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Backend development, API integrations, and cloud
-                    architecture projects
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <MapPin className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900 mb-2">
-                    Remote Opportunities
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Full-time or contract positions with innovative companies
-                    worldwide
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <ExternalLink className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-medium text-gray-900 mb-2">Consulting</h3>
-                  <p className="text-sm text-gray-600">
-                    Architecture reviews, performance optimization, and
-                    technical guidance
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* CTA */}
-          <div className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <Button size="lg" asChild className="text-lg px-8 py-4">
-                <a
-                  href="mailto:pratikvaishnav2013@gmail.com"
-                  className="flex items-center gap-2"
-                >
-                  <Mail className="w-5 h-5" />
-                  Send Email
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="text-lg px-8 py-4"
-              >
-                <a
-                  href="https://wa.me/919879957167"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                  WhatsApp
-                </a>
-              </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-            <p className="text-sm text-gray-600">
-              Ready to discuss your project? Reach out directly via email or
-              WhatsApp
-            </p>
+
+            {/* Professional Interests */}
+            <Card className="p-8 mb-8">
+              <CardContent className="p-0">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+                  Professional Interests
+                </h2>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <MessageSquare className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-medium text-gray-900 mb-2">
+                      Technical Discussions
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      Backend architecture, API design, and cloud technologies
+                    </p>
+                  </div>
+
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <MapPin className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-medium text-gray-900 mb-2">
+                      Industry Networking
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      Connecting with fellow developers and technology
+                      enthusiasts
+                    </p>
+                  </div>
+
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <ExternalLink className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-medium text-gray-900 mb-2">
+                      Knowledge Sharing
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      Best practices, performance optimization, and technical
+                      insights
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* CTA */}
+            <div className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                <Button size="lg" asChild className="text-lg px-8 py-4">
+                  <a
+                    href="mailto:pratikvaishnav2013@gmail.com"
+                    className="flex items-center gap-2"
+                  >
+                    <Mail className="w-5 h-5" />
+                    Send Email
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="text-lg px-8 py-4"
+                >
+                  <a
+                    href="https://wa.me/919879957167"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                    WhatsApp
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-gray-600">
+                Feel free to reach out for professional networking or technical
+                discussions
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </PageTransition>
   );
 };
 

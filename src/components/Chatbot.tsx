@@ -56,7 +56,7 @@ const Chatbot = () => {
             label: "Download Resume",
             action: () =>
               window.open(
-                "https://pratik-vaishnav.github.io/Pratik_Vaishnav_Resume.pdf",
+                "https://pratik-vaishnav.github.io/Pratik_Resume.pdf",
                 "_blank",
               ),
             icon: <Download className="w-4 h-4" />,
