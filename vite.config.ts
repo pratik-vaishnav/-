@@ -3,11 +3,27 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/' : '/',
+export default defineConfig({
   server: {
-    host: "::",
-    port: 8080,
+    host: "0.0.0.0",
+    port: 5173,
+    strictPort: false,
+    headers: {
+      "Cross-Origin-Embedder-Policy": "require-corp",
+      "Cross-Origin-Opener-Policy": "same-origin",
+    },
+    fs: {
+      strict: false,
+    },
+    middlewareMode: false,
+    cors: true,
+  },
+  assetsInclude: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom"],
+    esbuildOptions: {
+      target: "es2020",
+    },
   },
   plugins: [react()],
   resolve: {
@@ -16,8 +32,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+    outDir: "dist",
+    assetsDir: "assets",
     emptyOutDir: true,
   },
-}));
+  esbuild: {
+    logOverride: { "this-is-undefined-in-esm": "silent" },
+  },
+});
