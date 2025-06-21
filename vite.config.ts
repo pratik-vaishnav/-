@@ -40,4 +40,5 @@ export default defineConfig({
   esbuild: {
     logOverride: { "this-is-undefined-in-esm": "silent" },
   },
+  base: '/',
 });
